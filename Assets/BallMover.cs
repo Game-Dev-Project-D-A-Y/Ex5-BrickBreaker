@@ -10,8 +10,10 @@ public class BallMover : MonoBehaviour
     private bool inPlay;
 
     [SerializeField] KeyCode keyToStart;
-    [SerializeField] Transform ballPosition;
+    [SerializeField] Transform ballStartPosition;
     [SerializeField] float startingForce;
+    public Transform explosion;
+    public GameManager gameManager;
 
 
     
@@ -25,10 +27,14 @@ public class BallMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gameManager.gameOver)
+        {
+            return;
+        }
 
         if(!inPlay)
         {
-            transform.position = ballPosition.position;
+            transform.position = ballStartPosition.position;
         }
 
         if(Input.GetKeyDown(keyToStart) && !inPlay)
@@ -44,6 +50,21 @@ public class BallMover : MonoBehaviour
             Debug.Log("Hit Bottom border");
             rb.velocity = Vector2.zero;
             inPlay = false;
+            gameManager.DecreaseLives();
+        }
+     
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+           if(other.transform.CompareTag("Brick"))
+        {
+           Transform newExplosion = Instantiate(explosion, other.transform.position, other.transform.rotation);
+            Destroy(newExplosion.gameObject,2.5f);
+
+            gameManager.UpdateScore(other.gameObject.GetComponent<BrickScript>().points);
+
+            Destroy(other.gameObject);
         }
     }
+
 }

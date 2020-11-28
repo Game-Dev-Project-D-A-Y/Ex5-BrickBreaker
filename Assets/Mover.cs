@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//just bla
 /**
  * This component allows the player to move its object horizontally using the keyboard.
  * It uses CharacterController.Move, which can climb stairs and ramps.
