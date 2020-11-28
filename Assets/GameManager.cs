@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -13,6 +14,8 @@ public class GameManager : MonoBehaviour
     public Text livesText;
 
     public Text scoreText;
+
+    public GameObject gameOverPanel;
 
     public bool gameOver;
 
@@ -60,5 +63,6 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         gameOver = true;
+        gameOverPanel.SetActive(true);
     }
 }
