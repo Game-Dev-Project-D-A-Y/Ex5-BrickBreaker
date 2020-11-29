@@ -9,13 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4919099419477542613}
-  - component: {fileID: -1476682015256993331}
   - component: {fileID: 4260287398340864632}
   - component: {fileID: -5448724956274875663}
   - component: {fileID: -1625024820766069265}
   m_Layer: 0
   m_Name: UnBreakableBrick
-  m_TagString: Brick
+  m_TagString: UnBreakableBrick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,19 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-1476682015256993331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7089816415488924135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17005c0cb7ccbb741bf6d6e94691f9e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 1
 --- !u!60 &4260287398340864632
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -72,7 +58,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5}
+    - - {x: 0.049053036, y: 0.5332583}
+      - {x: -0.009898349, y: 0.5324923}
       - {x: -0.4652558, y: 0.49863327}
       - {x: -0.468287, y: 0.49988687}
       - {x: -0.4700241, y: 0.5004875}
