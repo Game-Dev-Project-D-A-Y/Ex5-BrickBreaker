@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: -1476682015256993331}
   - component: {fileID: 4260287398340864632}
   - component: {fileID: -5448724956274875663}
+  - component: {fileID: -1625024820766069265}
   m_Layer: 0
-  m_Name: Brick
+  m_Name: UnBreakableBrick
   m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +128,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1c9f8ae880e698043916211c12bc4add, type: 3}
-  m_Color: {r: 0.007843138, g: 0.053283315, b: 0.16037738, a: 1}
+  m_Color: {r: 0.8396226, g: 0.071288735, b: 0.13492869, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -137,3 +138,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1625024820766069265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7089816415488924135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca2f30ce2d9efa4f9d10a9bed5e293b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

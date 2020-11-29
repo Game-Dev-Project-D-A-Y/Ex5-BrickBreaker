@@ -8,9 +8,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    public int lives;
+    public  int lives;
 
-    public int score;
+    public  int score;
 
     public Text livesText;
 
@@ -21,14 +21,37 @@ public class GameManager : MonoBehaviour
     public bool gameOver;
 
     public int bricksCounter;
+    
+    private int level;
 
 
+ 
     // Start is called before the first frame update
     void Start()
     {
+        
+        level= SceneManager.GetActiveScene().buildIndex;
+        if(level != 0 )
+        {
+            LoadData();
+        }
+    
+
         bricksCounter = GameObject.FindGameObjectsWithTag("Brick").Length + GameObject.FindGameObjectsWithTag("HarderBrick").Length;
         DisplayLives();
         DisplayScore();
+    }
+
+    public void LoadData()
+    {
+        score = PlayerPrefs.GetInt("Score",score);
+        lives = PlayerPrefs.GetInt("Lives",lives);
+    }
+
+     public void SaveData()
+    {
+     PlayerPrefs.SetInt("Score",score);   
+     PlayerPrefs.SetInt("Lives",lives);   
     }
 
     // Update is called once per frame
@@ -75,8 +98,9 @@ public class GameManager : MonoBehaviour
     {
         bricksCounter--;
         if(bricksCounter <= 0){
-            gameOver = true; // should be removed ?
-            GameOver();
+            gameOver = true; 
+            SaveData();
+            NextLevel();
         }
     }
     private void GameOver()
@@ -88,7 +112,7 @@ public class GameManager : MonoBehaviour
     public void PlayAgain()
     {
         Debug.Log("PlayAgain");
-        SceneManager.LoadScene("level-1");
+        SceneManager.LoadScene(0);
     }
 
     public void Exit()
@@ -97,4 +121,12 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void NextLevel()
+    {
+        if(++level==4)
+        {
+            return;
+        }
+        SceneManager.LoadScene(level);
+    }
 }

@@ -10,6 +10,7 @@ TagManager:
   - Brick
   - LifeAdder
   - HarderBrick
+  - UnBreakableBrick
   layers:
   - Default
   - TransparentFX
