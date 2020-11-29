@@ -1808,9 +1808,9 @@ GameObject:
   - component: {fileID: 788952116}
   - component: {fileID: 788952114}
   - component: {fileID: 788952113}
-  - component: {fileID: 788952115}
   - component: {fileID: 788952118}
   - component: {fileID: 788952117}
+  - component: {fileID: 788952115}
   m_Layer: 0
   m_Name: Surface
   m_TagString: Untagged
@@ -1890,9 +1890,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.21398173, y: 0.71517897}
+    - - {x: 0.18643789, y: 0.78862906}
       - {x: 0, y: 0.7126446}
-      - {x: -0.21870503, y: 0.7085738}
+      - {x: -0.1532885, y: 0.8003869}
       - {x: -0.5002456, y: 0.15686883}
       - {x: -0.50057346, y: -0.50260735}
       - {x: 0.50035954, y: -0.5021133}
@@ -4926,7 +4926,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 2f29371260decb9418386c4b886e558b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

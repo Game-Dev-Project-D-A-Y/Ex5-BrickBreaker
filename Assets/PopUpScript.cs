@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PopUpScript : MonoBehaviour
 {
-    float duration = 5f;
-
+    int duration = 5;
+   
+    void start()
+    {
+    }
     // Update is called once per frame
     void Update()
     {
-        if(Time.time > duration)
-        {
-            Destroy(gameObject);
-        }
+        
+           Destroy(gameObject,duration);
+        
         
     }
 }
