@@ -14,6 +14,7 @@ public class BallMover : MonoBehaviour
     [SerializeField] float startingForce;
     public Transform explosion;
     public GameManager gameManager;
+    public Transform lifeAdderObject;
 
 
     
@@ -57,14 +58,43 @@ public class BallMover : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D other)
     {
+            
            if(other.transform.CompareTag("Brick"))
         {
-           Transform newExplosion = Instantiate(explosion, other.transform.position, other.transform.rotation);
+            int randomNumber = Random.Range(1, 1001);
+            if(randomNumber <= 10)
+            {
+                Instantiate(lifeAdderObject, other.transform.position, other.transform.rotation);
+            }
+            Transform newExplosion = Instantiate(explosion, other.transform.position, other.transform.rotation);
             Destroy(newExplosion.gameObject,2.5f);
 
             gameManager.UpdateScore(other.gameObject.GetComponent<BrickScript>().points);
             gameManager.BricksUpdate();
             Destroy(other.gameObject);
+        }
+        if (other.transform.CompareTag("HarderBrick"))
+        {
+            HarderBrickScript harderBrickScript = other.gameObject.GetComponent<HarderBrickScript>();
+            if (harderBrickScript.brickLives > 1)
+            {
+                harderBrickScript.BreakBrick();
+            }
+            else
+            {
+                int randomNumber = Random.Range(1, 1001);
+                if (randomNumber <= 10)
+                {
+                    Instantiate(lifeAdderObject, other.transform.position, other.transform.rotation);
+                }
+
+                Transform newExplosion = Instantiate(explosion, other.transform.position, other.transform.rotation);
+                Destroy(newExplosion.gameObject, 2.5f);
+
+                gameManager.UpdateScore(harderBrickScript.points);
+                gameManager.BricksUpdate();
+                Destroy(other.gameObject);
+            }
         }
     }
 

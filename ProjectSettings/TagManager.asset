@@ -8,6 +8,8 @@ TagManager:
   - Surface
   - BottomBorder
   - Brick
+  - LifeAdder
+  - HarderBrick
   layers:
   - Default
   - TransparentFX

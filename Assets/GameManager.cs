@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bricksCounter = GameObject.FindGameObjectsWithTag("Brick").Length;
+        bricksCounter = GameObject.FindGameObjectsWithTag("Brick").Length + GameObject.FindGameObjectsWithTag("HarderBrick").Length;
         DisplayLives();
         DisplayScore();
     }
@@ -55,6 +55,12 @@ public class GameManager : MonoBehaviour
         GameOver();
     }
         // check if there is no more lives
+        DisplayLives();
+    }
+
+    public void IncreaseLives()
+    {
+        lives++;
         DisplayLives();
     }
 
