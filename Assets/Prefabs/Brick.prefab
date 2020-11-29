@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 4919099419477542613}
   - component: {fileID: 5947434529272479771}
   - component: {fileID: 4265938666422898121}
-  - component: {fileID: 7199930132564435761}
   - component: {fileID: -1476682015256993331}
+  - component: {fileID: 4260287398340864632}
   m_Layer: 0
   m_Name: Brick
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7089816415488924135}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.046059996, y: 2, z: -2.4153237}
-  m_LocalScale: {x: 5, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,8 +81,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!61 &7199930132564435761
-BoxCollider2D:
+--- !u!114 &-1476682015256993331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7089816415488924135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17005c0cb7ccbb741bf6d6e94691f9e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 1
+--- !u!60 &4260287398340864632
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -104,19 +117,21 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &-1476682015256993331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7089816415488924135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17005c0cb7ccbb741bf6d6e94691f9e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 1
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.5}
+      - {x: -0.4652558, y: 0.49863327}
+      - {x: -0.468287, y: 0.49988687}
+      - {x: -0.4700241, y: 0.5004875}
+      - {x: -0.4999811, y: 0.4973768}
+      - {x: -0.5000638, y: 0.33778536}
+      - {x: -0.49997938, y: -0.34382293}
+      - {x: -0.49914634, y: -0.5052011}
+      - {x: -0.32760093, y: -0.4944117}
+      - {x: -0.30396816, y: -0.4846408}
+      - {x: 0.06213764, y: -0.5011406}
+      - {x: 0.23517787, y: -0.49404776}
+      - {x: 0.50110877, y: -0.47302675}
+      - {x: 0.50047535, y: -0.45567843}
+      - {x: 0.49988353, y: 0.47464764}
+      - {x: 0.31887308, y: 0.5047717}
