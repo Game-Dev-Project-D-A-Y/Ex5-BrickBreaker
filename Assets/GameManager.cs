@@ -20,9 +20,13 @@ public class GameManager : MonoBehaviour
 
     public bool gameOver;
 
+    public int bricksCounter;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        bricksCounter = GameObject.FindGameObjectsWithTag("Brick").Length;
         DisplayLives();
         DisplayScore();
     }
@@ -61,15 +65,30 @@ public class GameManager : MonoBehaviour
         DisplayScore();
     }
 
+    public void BricksUpdate()
+    {
+        bricksCounter--;
+        if(bricksCounter <= 0){
+            gameOver = true;
+            GameOver();
+        }
+    }
     private void GameOver()
     {
         gameOver = true;
         gameOverPanel.SetActive(true);
     }
 
-    void PlayAgain()
+    public void PlayAgain()
     {
-        
+        Debug.Log("PlayAgain");
+        SceneManager.LoadScene("level-1");
+    }
+
+    public void Exit()
+    {
+        Debug.Log("Exit");
+        Application.Quit();
     }
 
 }

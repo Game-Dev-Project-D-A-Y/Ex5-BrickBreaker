@@ -29,6 +29,7 @@ public class BallMover : MonoBehaviour
     {
         if(gameManager.gameOver)
         {
+            rb.velocity = Vector2.zero;
             return;
         }
 
@@ -62,7 +63,7 @@ public class BallMover : MonoBehaviour
             Destroy(newExplosion.gameObject,2.5f);
 
             gameManager.UpdateScore(other.gameObject.GetComponent<BrickScript>().points);
-
+            gameManager.BricksUpdate();
             Destroy(other.gameObject);
         }
     }
