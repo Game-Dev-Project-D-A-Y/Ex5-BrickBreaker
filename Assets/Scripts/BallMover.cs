@@ -63,7 +63,7 @@ public class BallMover : MonoBehaviour
         if (other.transform.CompareTag("Brick"))
         {
             int randomNumber = Random.Range(1, 1001);
-            if (randomNumber <= 10)
+            if (randomNumber <= 25)
             {
                 Instantiate(lifeAdderObject,
                 other.transform.position,
