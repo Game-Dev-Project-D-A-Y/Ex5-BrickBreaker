@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
     {
         bricksCounter--;
         if(bricksCounter <= 0){
-            gameOver = true;
+            gameOver = true; // should be removed ?
             GameOver();
         }
     }
