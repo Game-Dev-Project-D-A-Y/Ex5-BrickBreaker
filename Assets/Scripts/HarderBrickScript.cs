@@ -6,7 +6,7 @@ public class HarderBrickScript : MonoBehaviour
 {
     public int points;
     public int brickLives;
-    public SpriteRenderer brickSprite;
+    private SpriteRenderer brickSprite;
 
     public void BreakBrick()
     {
@@ -17,12 +17,5 @@ public class HarderBrickScript : MonoBehaviour
     void Start()
     {
         brickSprite = GetComponent<SpriteRenderer>();
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

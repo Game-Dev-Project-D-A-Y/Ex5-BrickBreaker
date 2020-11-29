@@ -6,12 +6,8 @@ using UnityEngine;
 /**
  * This component moves its object when the player clicks the arrow keys.
  */
-public class KeyboardMover : MonoBehaviour
+public class SurfaceScript : MonoBehaviour
 {
-    [Tooltip("Speed of movement, in meters per second")]
-    [SerializeField]
-    float speed = 1f;
-
     public GameManager gameManager;
 
     private Camera camera;
@@ -19,6 +15,18 @@ public class KeyboardMover : MonoBehaviour
     private float cameraLeftBorder;
 
     private float cameraRightBorder;
+
+    private bool isDragging;
+
+    public void OnMouseDown()
+    {
+        isDragging = true;
+    }
+
+    public void OnMouseUp()
+    {
+        isDragging = false;
+    }
 
     void Start()
     {
@@ -32,12 +40,28 @@ public class KeyboardMover : MonoBehaviour
 
     void Update()
     {
-        if(gameManager.gameOver){
+        if (gameManager.gameOver)
+        {
             return;
         }
-        float horizontal = Input.GetAxis("Horizontal"); // +1 if right arrow is pushed, -1 if left arrow is pushed, 0 otherwise
-        transform
-            .Translate(Vector2.right * horizontal * Time.deltaTime * speed);
+
+        if (isDragging)
+        {
+            Vector3 point =
+                Camera
+                    .main
+                    .ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
+                        (
+                        transform.position.y - Camera.main.transform.position.y
+                        ),
+                        (
+                        transform.position.z - Camera.main.transform.position.z
+                        )));
+
+            point.y = transform.position.y;
+            point.z = transform.position.z;
+            transform.position = point;
+        }
 
         if (
             transform.position.x - (transform.localScale.x / 2) <
@@ -56,6 +80,15 @@ public class KeyboardMover : MonoBehaviour
             transform.position =
                 new Vector2(cameraRightBorder - (transform.localScale.x / 2),
                     transform.position.y);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "LifeAdder")
+        {
+            gameManager.IncreaseLives();
+            Destroy(other.gameObject);
         }
     }
 }

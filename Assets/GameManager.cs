@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     {
         
         level= SceneManager.GetActiveScene().buildIndex;
-        if(level != 0 )
+        if(level != 0 && level != 1 )
         {
             LoadData();
         }
@@ -112,13 +112,13 @@ public class GameManager : MonoBehaviour
     public void PlayAgain()
     {
         Debug.Log("PlayAgain");
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void Exit()
     {
         Debug.Log("Exit");
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 
     public void NextLevel()

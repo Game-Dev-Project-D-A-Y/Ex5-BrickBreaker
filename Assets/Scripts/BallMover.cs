@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class BallMover : MonoBehaviour
 {
-
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     private bool inPlay;
 
-    [SerializeField] KeyCode keyToStart;
-    [SerializeField] Transform ballStartPosition;
-    [SerializeField] float startingForce;
+    public KeyCode keyToStart;
+
+    public Transform ballStartPosition;
+
+    public float startingForce;
+
     public Transform explosion;
+
     public GameManager gameManager;
+
     public Transform lifeAdderObject;
 
-
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,18 +30,18 @@ public class BallMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameManager.gameOver)
+        if (gameManager.gameOver)
         {
             rb.velocity = Vector2.zero;
             return;
         }
 
-        if(!inPlay)
+        if (!inPlay)
         {
             transform.position = ballStartPosition.position;
         }
 
-        if(Input.GetKeyDown(keyToStart) && !inPlay)
+        if (Input.GetKeyDown(keyToStart) && !inPlay)
         {
             inPlay = true;
             rb.AddForce(Vector2.up * startingForce);
@@ -48,34 +50,43 @@ public class BallMover : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "BottomBorder"){
-            Debug.Log("Hit Bottom border");
+        if (other.tag == "BottomBorder")
+        {
             rb.velocity = Vector2.zero;
             inPlay = false;
             gameManager.DecreaseLives();
         }
-     
     }
+
     void OnCollisionEnter2D(Collision2D other)
     {
-            
-           if(other.transform.CompareTag("Brick"))
+        if (other.transform.CompareTag("Brick"))
         {
             int randomNumber = Random.Range(1, 1001);
-            if(randomNumber <= 10)
+            if (randomNumber <= 10)
             {
-                Instantiate(lifeAdderObject, other.transform.position, other.transform.rotation);
+                Instantiate(lifeAdderObject,
+                other.transform.position,
+                other.transform.rotation);
             }
-            Transform newExplosion = Instantiate(explosion, other.transform.position, other.transform.rotation);
-            Destroy(newExplosion.gameObject,2.5f);
+            Transform newExplosion =
+                Instantiate(explosion,
+                other.transform.position,
+                other.transform.rotation);
+            Destroy(newExplosion.gameObject, 2.5f);
 
-            gameManager.UpdateScore(other.gameObject.GetComponent<BrickScript>().points);
+            gameManager
+                .UpdateScore(other
+                    .gameObject
+                    .GetComponent<BrickScript>()
+                    .points);
             gameManager.BricksUpdate();
             Destroy(other.gameObject);
         }
         if (other.transform.CompareTag("HarderBrick"))
         {
-            HarderBrickScript harderBrickScript = other.gameObject.GetComponent<HarderBrickScript>();
+            HarderBrickScript harderBrickScript =
+                other.gameObject.GetComponent<HarderBrickScript>();
             if (harderBrickScript.brickLives > 1)
             {
                 harderBrickScript.BreakBrick();
@@ -85,10 +96,15 @@ public class BallMover : MonoBehaviour
                 int randomNumber = Random.Range(1, 1001);
                 if (randomNumber <= 10)
                 {
-                    Instantiate(lifeAdderObject, other.transform.position, other.transform.rotation);
+                    Instantiate(lifeAdderObject,
+                    other.transform.position,
+                    other.transform.rotation);
                 }
 
-                Transform newExplosion = Instantiate(explosion, other.transform.position, other.transform.rotation);
+                Transform newExplosion =
+                    Instantiate(explosion,
+                    other.transform.position,
+                    other.transform.rotation);
                 Destroy(newExplosion.gameObject, 2.5f);
 
                 gameManager.UpdateScore(harderBrickScript.points);
@@ -97,5 +113,4 @@ public class BallMover : MonoBehaviour
             }
         }
     }
-
 }

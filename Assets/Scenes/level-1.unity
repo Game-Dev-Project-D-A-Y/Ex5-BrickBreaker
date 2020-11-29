@@ -1302,7 +1302,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &747189855
 PrefabInstance:
@@ -1526,7 +1526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f442681e7ddf5b94b80fb95a41c03a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
   gameManager: {fileID: 2138878730}
 --- !u!50 &788952118
 Rigidbody2D:
@@ -3213,7 +3212,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2138878730}
         m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
@@ -3355,7 +3354,7 @@ RectTransform:
   - {fileID: 800812463}
   - {fileID: 1415943371}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3861,7 +3860,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2138878730}
         m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
@@ -4042,7 +4041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901e1c5b0606f6246ba1f480a862222b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyToStart: 32
+  keyToStart: 323
   ballStartPosition: {fileID: 809188574}
   startingForce: 400
   explosion: {fileID: 8981358544782397176, guid: 2788d8e6a78021f4eacee0102bab2252,
@@ -4137,7 +4136,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &9114496328814591070
 PrefabInstance:

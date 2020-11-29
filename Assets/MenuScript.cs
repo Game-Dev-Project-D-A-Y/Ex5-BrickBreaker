@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class UnBreakableBrickScript : MonoBehaviour
+public class MenuScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +16,9 @@ public class UnBreakableBrickScript : MonoBehaviour
     void Update()
     {
         
+    }
+    public void StartPlaying()
+    {
+        SceneManager.LoadScene(1);
     }
 }
