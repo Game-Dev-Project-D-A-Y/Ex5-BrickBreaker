@@ -2016,7 +2016,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -67, y: -25.8}
+  m_AnchoredPosition: {x: -68, y: -18}
   m_SizeDelta: {x: 202.9046, y: 46.265488}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &830249646
@@ -2407,7 +2407,7 @@ GameObject:
   - component: {fileID: 1153464260}
   - component: {fileID: 1153464259}
   m_Layer: 0
-  m_Name: bharath-g-s-aLGiPJ4XRO4-unsplash
+  m_Name: Backgroung
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
