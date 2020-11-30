@@ -58,7 +58,7 @@ By Colliding with the bottom border (see borders) a life will be decreased and t
 <img src=https://github.com/Game-Dev-Project-D-A-Y/Ex5-BrickBreaker/blob/master/Images/Surface.jpg width="200"/>
 
     
-Has RigidBody, Cube(Mesh Rendere), Polygon Collider and a [SurfaceScript]().   
+Has RigidBody, Cube(Mesh Rendere), Polygon Collider and a [SurfaceScript](https://github.com/Game-Dev-Project-D-A-Y/Ex5-BrickBreaker/blob/master/Assets/Scripts/SurfaceScript.cs).   
 To make sure the ball will move in a different angle when hiting the Surface in differnet areas of the Surface We've used the Polygon Collider instead of a Box Collider which fits perectlly on the rectangle Cube.   
 This salution will insure that the player can have more controll on the movment of the ball.   
 * Mouse Movemnet - The Surface is contolled by the mouse while its pressed the data member **isDragging** will be true (false if we release our hand from the mouse click) and will move according to the mouse's position.   
@@ -67,7 +67,7 @@ This salution will insure that the player can have more controll on the movment 
 ### Borders
 Four borders - Top, Bottom, Right and Left.   
 * Left/Right/Top - We gave an angle to the Box Colider so that the ball wont be stuck between two walls or a wall and a brick/surface.    
-* Bottom Border - When collides with the Bottom it is destroyed see: [BottomBorderScript]().   
+* Bottom Border - When collides with the Bottom it is destroyed see: [BottomBorderScript](https://github.com/Game-Dev-Project-D-A-Y/Ex5-BrickBreaker/blob/master/Assets/Scripts/BottomBorderScript.cs).   
 
 ### Canvas
 Holds the score and lives which are uodated through the GameManager.   
