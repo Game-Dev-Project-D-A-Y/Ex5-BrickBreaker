@@ -17,13 +17,14 @@ Every Lvele Scene has the following objects:
 * GameManager
 * EventScene
 * Background   
-<img src=https://github.com/Game-Dev-Project-D-A-Y/Ex5-BrickBreaker/blob/master/Images/level2.jpg width="400"/>
+<img src=https://github.com/Game-Dev-Project-D-A-Y/Ex5-BrickBreaker/blob/master/Images/leverlHirarchy.jpg width="200"/>
 ### Bricks   
-There are two kinds of bricks; **"Brick"** and **HarderBrick"**.    
+There are three kinds of bricks; **"Brick"**, **HarderBrick"** and UnbreakanleBrick.   
 Each one is a **prefab** and while both have a Poligon Coillider and Sprite Rendere they each have their own Script.
 Brick has its own [BrickScript](https://github.com/Game-Dev-Project-D-A-Y/Ex5-BrickBreaker/blob/master/Assets/Scripts/BrickScript.cs) and HarderBrick has its own [HarderBrickScript](https://github.com/Game-Dev-Project-D-A-Y/Ex5-BrickBreaker/blob/master/Assets/Scripts/HarderBrickScript.cs).   
 **Brick** - Has one life and when the ball hits it it will be destoyed.   
-**Harder Brick** - Has two lives and has a different color to notice the differnce. when hitting the HarderBrick once its color will change to the color of the regular "Brick".   
+**Harder Brick** - Has two lives and has a different color to notice the differnce. when hitting the HarderBrick once its color will change to the color of the regular "Brick".       
+**UnbreakanleBrick** - Has a Collider and thats all - very simple and everytime the ball hits it the simple physics does its work.
 
    
 ### Ball    
@@ -55,18 +56,19 @@ Managers the entire game.
 Loads data every begining of a scene (not the first scene because there' no data to load..).   
 Countes the number of Bricks and has these simple and neccessry functions: 
 
-`private void DisplayLives()`
-`private void DisplayScore()`
-`public void DecreaseLives()`
-`public void IncreaseLives()`
-`public void UpdateScore(int points)`
-`public void BricksUpdate()`
-`private void GameOver()`
-`public void PlayAgain()`
-`public void Exit()`
-`public void NextLevel()`
+`private void DisplayLives()`   
+`private void DisplayScore()`   
+`public void DecreaseLives()`   
+`public void IncreaseLives()`   
+`public void UpdateScore(int points)`    
+`public void BricksUpdate()`    
+`private void GameOver()`    
+`public void PlayAgain()`    
+`public void Exit()`    
+`public void NextLevel()`   
 
-## Issues & Salutions
+## Issues & Salutions   
+
 * Poligon Coillider - We changed the Collider of the Bricks  to Poligon Coliider and created a slight angle on each 
 brick and border so the ball won't stuck in  a specific angle between the two bricks.     
 * Savind the data from previous Scene - by usuing two functions to Load - PlayerPrefs.GetInt and Save - PlayerPrefs.SetInt, the data we managed to fix the problem.
