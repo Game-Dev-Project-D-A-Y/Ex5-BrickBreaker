@@ -7,7 +7,7 @@ Short game of Brick-Breaker with different levels made in Unity.
 
 ### How to play   
 Very Easy!!    
-Just click the mouse to start like it sais and hold the Surface!!    
+Just click the mouse to start like it says and hold the Surface!!    
 <img src=https://github.com/Game-Dev-Project-D-A-Y/Ex5-BrickBreaker/blob/master/Images/popup.jpg width="250"/>     
 ### Levels   
 * Level 1 - Simple Bricks.
