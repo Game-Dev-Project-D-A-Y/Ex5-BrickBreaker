@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if(++level==4)
+        if(++level==5)
         {
             return;
         }
