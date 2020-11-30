@@ -1428,6 +1428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e08d884c46f8104e8ab1f68720d6cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 5
 --- !u!102 &496136364
 TextMesh:
   serializedVersion: 3
@@ -2660,6 +2661,16 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9114496327559136846, guid: bfb40dbf7e79da34caa9fad4db9b808d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.40044498
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114496327559136846, guid: bfb40dbf7e79da34caa9fad4db9b808d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 19.19911
+      objectReference: {fileID: 0}
     - target: {fileID: 9114496327559136847, guid: bfb40dbf7e79da34caa9fad4db9b808d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2734,6 +2745,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1212704365}
     m_Modifications:
+    - target: {fileID: 9114496327559136846, guid: bfb40dbf7e79da34caa9fad4db9b808d,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0658212
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114496327559136846, guid: bfb40dbf7e79da34caa9fad4db9b808d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.1670961
+      objectReference: {fileID: 0}
     - target: {fileID: 9114496327559136847, guid: bfb40dbf7e79da34caa9fad4db9b808d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3118,12 +3139,12 @@ PrefabInstance:
     - target: {fileID: 9114496327559136846, guid: bfb40dbf7e79da34caa9fad4db9b808d,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.062006727
+      value: -0.050349295
       objectReference: {fileID: 0}
     - target: {fileID: 9114496327559136846, guid: bfb40dbf7e79da34caa9fad4db9b808d,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.875986
+      value: 0.9957882
       objectReference: {fileID: 0}
     - target: {fileID: 9114496327559136847, guid: bfb40dbf7e79da34caa9fad4db9b808d,
         type: 3}
@@ -4481,6 +4502,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1212704365}
     m_Modifications:
+    - target: {fileID: 9114496327559136846, guid: bfb40dbf7e79da34caa9fad4db9b808d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.06356716
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114496327559136846, guid: bfb40dbf7e79da34caa9fad4db9b808d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 19.314505
+      objectReference: {fileID: 0}
     - target: {fileID: 9114496327559136847, guid: bfb40dbf7e79da34caa9fad4db9b808d,
         type: 3}
       propertyPath: m_LocalPosition.x

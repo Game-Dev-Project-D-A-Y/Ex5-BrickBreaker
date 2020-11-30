@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PopUpScript : MonoBehaviour
 {
-    int duration = 5;
+    [SerializeField]int duration;
    
     void start()
     {
