@@ -3,7 +3,7 @@ Short game of Brick-Breaker with different levels made in Unity.
 
 <img src=https://github.com/Game-Dev-Project-D-A-Y/Ex5-BrickBreaker/blob/master/Images/level2.jpg width="400"/>    
    
-[Play on Itch.io](https://game-dev-project-d-a-y.itch.io/brick-breaker)
+### [Play on Itch.io](https://game-dev-project-d-a-y.itch.io/brick-breaker)
 
 ### How to play   
 Very Easy!!    
