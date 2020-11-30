@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+* This script represents the ball moves and collides.
+*/
 public class BallMover : MonoBehaviour
 {
-    private Rigidbody2D rb;
-
-    private bool inPlay;
-
     public KeyCode keyToStart;
 
     public Transform ballStartPosition;
@@ -20,6 +19,12 @@ public class BallMover : MonoBehaviour
 
     public Transform lifeAdderObject;
 
+    public float chanceToLifeAdder;
+
+    private Rigidbody2D rb;
+
+    private bool inPlay;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,17 +35,20 @@ public class BallMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Do nothing when game is over
         if (gameManager.gameOver)
         {
             rb.velocity = Vector2.zero;
             return;
         }
 
+        // Attach the ball to surface before starting
         if (!inPlay)
         {
             transform.position = ballStartPosition.position;
         }
 
+        // Start playing when pushing keyToStart
         if (Input.GetKeyDown(keyToStart) && !inPlay)
         {
             inPlay = true;
@@ -50,7 +58,13 @@ public class BallMover : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "BottomBorder")
+        if (other.tag == GameManager.LIFE_ADDER)
+        {
+            return;
+        }
+
+        // Handle collision with bottom border
+        if (other.tag == GameManager.BOTTOM_BORDER)
         {
             rb.velocity = Vector2.zero;
             inPlay = false;
@@ -60,41 +74,47 @@ public class BallMover : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.transform.CompareTag("Brick"))
+        int randomNumber = Random.Range(1, 101);
+
+        // Handle collisions with bricks
+        if (other.transform.CompareTag(GameManager.BRICK))
         {
-            int randomNumber = Random.Range(1, 1001);
-            if (randomNumber <= 25)
+            BrickScript brickScript =
+                other.gameObject.GetComponent<BrickScript>();
+
+            // Instantiate LifeAdder randomally - chanceToLifeAdder chance to get a LifeAdder.
+            if (randomNumber <= chanceToLifeAdder)
             {
                 Instantiate(lifeAdderObject,
                 other.transform.position,
                 other.transform.rotation);
             }
+
+            // Explosion effect when breaking a brick
             Transform newExplosion =
                 Instantiate(explosion,
                 other.transform.position,
                 other.transform.rotation);
             Destroy(newExplosion.gameObject, 2.5f);
 
-            gameManager
-                .UpdateScore(other
-                    .gameObject
-                    .GetComponent<BrickScript>()
-                    .points);
+            gameManager.UpdateScore(brickScript.points);
             gameManager.BricksUpdate();
             Destroy(other.gameObject);
         }
-        if (other.transform.CompareTag("HarderBrick"))
+
+        // Handle collisions with harder bricks
+        if (other.transform.CompareTag(GameManager.HARDER_BRICK))
         {
             HarderBrickScript harderBrickScript =
                 other.gameObject.GetComponent<HarderBrickScript>();
+
             if (harderBrickScript.brickLives > 1)
             {
                 harderBrickScript.BreakBrick();
             }
             else
             {
-                int randomNumber = Random.Range(1, 1001);
-                if (randomNumber <= 10)
+                if (randomNumber <= chanceToLifeAdder)
                 {
                     Instantiate(lifeAdderObject,
                     other.transform.position,

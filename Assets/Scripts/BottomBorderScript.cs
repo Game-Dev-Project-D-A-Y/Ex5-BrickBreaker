@@ -6,9 +6,9 @@ public class BottomBorderScript : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "LifeAdder")
+        // Destroy LifeAdders
+        if (other.tag == GameManager.LIFE_ADDER)
         {
-            Debug.Log("entered");
             Destroy(other.gameObject);
         }
     }

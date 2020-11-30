@@ -13,6 +13,7 @@ public class HarderBrickScript : MonoBehaviour
         brickLives--;
         brickSprite.color = Color.blue;
     }
+    
     // Start is called before the first frame update
     void Start()
     {

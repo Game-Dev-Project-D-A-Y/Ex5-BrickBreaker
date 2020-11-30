@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class PopUpScript : MonoBehaviour
 {
-    [SerializeField]int duration;
-   
-    void start()
-    {
-    }
+    public int duration;
+ 
     // Update is called once per frame
     void Update()
-    {
-        
-           Destroy(gameObject,duration);
-        
-        
+    {  
+        Destroy(gameObject,duration);
     }
 }

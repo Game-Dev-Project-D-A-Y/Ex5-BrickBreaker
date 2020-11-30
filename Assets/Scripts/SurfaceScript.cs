@@ -30,21 +30,22 @@ public class SurfaceScript : MonoBehaviour
 
     void Start()
     {
+        // Get camera borders
         camera = Camera.main;
 
         cameraRightBorder = camera.aspect * camera.orthographicSize;
         cameraLeftBorder = -cameraRightBorder;
-
-        Debug.Log("Left border: " + cameraLeftBorder);
     }
 
     void Update()
     {
+        // Do nothing when game is over
         if (gameManager.gameOver)
         {
             return;
         }
 
+        // Drag the surface horizontally with mouse
         if (isDragging)
         {
             Vector3 point =
@@ -63,6 +64,7 @@ public class SurfaceScript : MonoBehaviour
             transform.position = point;
         }
 
+        // Check Limits
         if (
             transform.position.x - (transform.localScale.x / 2) <
             cameraLeftBorder
@@ -85,7 +87,7 @@ public class SurfaceScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "LifeAdder")
+        if (other.tag == GameManager.LIFE_ADDER)
         {
             gameManager.IncreaseLives();
             Destroy(other.gameObject);
