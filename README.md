@@ -28,9 +28,13 @@ Brick has its own [BrickScript](https://github.com/Game-Dev-Project-D-A-Y/Ex5-Br
    
 ### Ball    
 Has RigidBody, Circle Collider and a [BallMoverScript](https://github.com/Game-Dev-Project-D-A-Y/Ex5-BrickBreaker/blob/master/Assets/Scripts/BallMover.cs).  
-* BallMoverScript - Controls the collision with the bricks and when it reaches the Bottom Border by the **OnCollisionEnter2D** function. In this Script we controll the PowerUp of HeartAdder which randomlly drops a "Life" when hitting a brick.   
-We used the **Random.Range(1, 1001)** function to generate a number between 1 and 1000 and if a number was chosen in the range that we chose so a a new LifeAdder object will be Instantiate from the position of the current Brick.   
-All of the collisions are using the Tags to detect which object is in a colision.
+* BallMoverScript - Controls the collision with the bricks and when it reaches the Bottom Border by the **OnCollisionEnter2D** function. In this Script we controll the PowerUp of HeartAdder which randomlly drops a "Life" (Prefab) when hitting a brick.   
+EveryTime a Brick is being hit an **Explosion Prefab** will be generated from the postion of the current brick which gives a fun effect to the game.   
+We used the **Random.Range(1, 1001)** function to generate a number between 1 and 1000 and if a number was chosen in the range that we chose so a a new **LifeAdder Prefab** will be Instantiate from the position of the current Brick.   
+All of the collisions are using the Tags to detect which object is in a colision.   
+
+### Surface   
+
 
 
 
