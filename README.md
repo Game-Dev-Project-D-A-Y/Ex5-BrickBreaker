@@ -34,13 +34,19 @@ We used the **Random.Range(1, 1001)** function to generate a number between 1 an
 All of the collisions are using the Tags to detect which object is in a colision.   
 
 ### Surface   
+Has RigidBody, Cube(Mesh Rendere), Polygon Collider and a [SurfaceScript]().   
+To make sure the ball will move in a different angle when hiting the Surface in differnet areas of the Surface We've used the Polygon Collider instead of a Box Collider which fits perectlly on the rectangle Cube.   
+This salution will insure that the player can have more controll on the movment of the ball.   
+* Mouse Movemnet - The Surface is contolled by the mouse while its pressed the data member **isDragging** will be true (false if we release our hand from the mouse click) and will move according to the mouse's position.   
+* LifeAdder Collision - When Colliderd with an Objcet caryying the **LifeAdder Tag** then a life will be increased to the player.
 
+### Borders
 
 
 
 
 ## Issues & Salutions
 * Poligon Coillider - We changed the Collider of the Bricks and the Borders to Poligon Coliider and created a slight angle on each 
-brick and border so the ball won't stuck in  a specific angle between the borders/two bricks.
+brick and border so the ball won't stuck in  a specific angle between the borders/two bricks.   
 
 
