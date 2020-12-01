@@ -11,6 +11,8 @@ TagManager:
   - LifeAdder
   - HarderBrick
   - UnBreakableBrick
+  - RightBorder
+  - LeftBorder
   layers:
   - Default
   - TransparentFX

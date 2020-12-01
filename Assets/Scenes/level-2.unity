@@ -3148,6 +3148,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightBorder
       objectReference: {fileID: 0}
+    - target: {fileID: 9114496327559136849, guid: bfb40dbf7e79da34caa9fad4db9b808d,
+        type: 3}
+      propertyPath: m_TagString
+      value: RightBorder
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfb40dbf7e79da34caa9fad4db9b808d, type: 3}
 --- !u!4 &1224555249 stripped
@@ -3899,6 +3904,11 @@ PrefabInstance:
     - target: {fileID: 9114496327559136849, guid: bfb40dbf7e79da34caa9fad4db9b808d,
         type: 3}
       propertyPath: m_Name
+      value: LeftBorder
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114496327559136849, guid: bfb40dbf7e79da34caa9fad4db9b808d,
+        type: 3}
+      propertyPath: m_TagString
       value: LeftBorder
       objectReference: {fileID: 0}
     m_RemovedComponents: []

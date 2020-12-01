@@ -59,24 +59,34 @@ public class SurfaceScript : MonoBehaviour
                         transform.position.z - Camera.main.transform.position.z
                         )));
 
+    
+
             point.y = transform.position.y;
             point.z = transform.position.z;
             transform.position = point;
+
         }
 
+        GameObject leftBorder = GameObject.Find("LeftBorder");
         // Check Limits
         if (
             transform.position.x - (transform.localScale.x / 2) <
-            cameraLeftBorder
+            //cameraLeftBorder
+            leftBorder.gameObject.transform.position.x
         )
+
+        
         {
             transform.position =
                 new Vector2(cameraLeftBorder + (transform.localScale.x / 2),
                     transform.position.y);
         }
+
+        GameObject rightBorder = GameObject.Find("RightBorder");
         if (
             transform.position.x + (transform.localScale.x / 2) >
-            cameraRightBorder
+            //cameraRightBorder
+            rightBorder.gameObject.transform.position.x
         )
         {
             transform.position =
