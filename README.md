@@ -5,6 +5,7 @@ Short game of Brick-Breaker with different levels made in Unity.
    
 ### [Play on Itch.io](https://game-dev-project-d-a-y.itch.io/brick-breaker)
 
+
 ### How to play   
 Very Easy!!    
 Just click the mouse to start like it says and hold the Surface!!    
